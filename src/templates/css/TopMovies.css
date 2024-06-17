@@ -1,0 +1,45 @@
+/* TopMovies.css */
+.movie-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* Автоматически заполняем контейнер карточками с минимальной шириной 200px */
+    grid-gap: 20px;
+    /* Отступы между карточками */
+    justify-items: center;
+    /* Выравнивание карточек по центру */
+}
+
+.wrapper {
+    width: 80vw;
+    margin: 0 auto;
+    /* Центрирование контейнера по горизонтали */
+}
+
+.movie-list .movie-card {
+    width: 100%;
+    /* Ширина карточки будет автоматически подстраиваться под размер ячейки grid */
+    /* Отступы между карточками будут управляться свойством grid-gap */
+}
+
+@media (max-width: 1024px) {
+    .movie-list .movie-card {
+        width: calc(33.33% - 20px);
+        /* Уменьшаем количество карточек на экране */
+    }
+}
+
+@media (max-width: 768px) {
+    .movie-list .movie-card {
+        width: calc(50% - 20px);
+        /* Две карточки в ряд на экранах планшетов */
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-list .movie-card {
+        width: 100%;
+        /* Одна карточка в ряд на мобильных устройствах */
+        margin-right: 0;
+        /* Убираем отступ справа на мобильных устройствах */
+    }
+}
